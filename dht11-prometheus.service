@@ -6,8 +6,6 @@ StartLimitBurst=3
 StartLimitInterval=60
 
 [Service]
-User=nobody
-Group=dialout
 Type=simple
 
 TimeoutStartSec=infinity
