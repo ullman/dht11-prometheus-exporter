@@ -1,0 +1,21 @@
+[Unit]
+Description=dht11-prometheus exporter
+DefaultDependencies=false
+
+StartLimitBurst=3
+StartLimitInterval=60
+
+[Service]
+User=nobody
+Group=dialout
+Type=simple
+
+TimeoutStartSec=infinity
+Restart=always
+RestartSec=10
+LimitCORE=infinity
+
+ExecStart=/usr/local/bin/dht11-prometheus -g 2 -p 9111 -r 60
+
+[Install]
+WantedBy=multi-user.target
